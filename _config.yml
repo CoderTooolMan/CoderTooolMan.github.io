@@ -55,7 +55,7 @@ postPatterns: 'circuitBoard'
 
 # SNS settings 配置社交网站
 # url: email, weibo, zhihu, twitter, instagram, juejin, github, douban, facebook, dribble, uicn, jianshu, medium, linkedin
-sns:
+#sns:
 #  bilibili: '//space.bilibili.com/25390047'
 #  github: '//github.com/kaeyleo'
 #  weibo: '//weibo.com/lovecolcol'
