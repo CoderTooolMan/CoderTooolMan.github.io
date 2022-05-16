@@ -1,0 +1,39 @@
+[33m29ef315[m[33m ([m[1;36mHEAD[m[33m)[m HEAD@{0}: commit: blog
+[33m39982de[m HEAD@{1}: commit: create
+[33m6e1d0a9[m HEAD@{2}: commit: blog
+[33m68e71f5[m HEAD@{3}: pull --rebase origin master (start): checkout 68e71f51053c83e2a4f732d23f9a02726c354669
+[33m3396c66[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{4}: rebase (continue) (finish): returning to refs/heads/master
+[33m3396c66[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m HEAD@{5}: commit: blog
+[33m377aa39[m HEAD@{6}: commit: blog
+[33m4bb5722[m HEAD@{7}: pull --rebase origin master (start): checkout 4bb5722a4d486885ed7166a5cd135c53eaa6e8c6
+[33m3aa9baa[m HEAD@{8}: commit: blog
+[33md81e154[m HEAD@{9}: commit: blog
+[33mfd13dfc[m HEAD@{10}: commit: blog
+[33mdfedf54[m HEAD@{11}: commit: blog
+[33mb5b23e4[m HEAD@{12}: commit: index.html
+[33me267612[m HEAD@{13}: commit: index.html
+[33mf8b24a9[m HEAD@{14}: commit: index.html
+[33m0baf130[m HEAD@{15}: commit: index.html
+[33m1dd9fda[m HEAD@{16}: commit: index.html
+[33m2c532ac[m HEAD@{17}: commit: index.html
+[33mcd98204[m HEAD@{18}: commit: index.html
+[33m3c8e94a[m HEAD@{19}: commit: index.html
+[33m2ac04fc[m HEAD@{20}: commit: index.html
+[33m2364514[m HEAD@{21}: commit: index.html
+[33m32d4c28[m HEAD@{22}: commit: index.html
+[33m4428edf[m HEAD@{23}: commit: index.html
+[33mc873db9[m HEAD@{24}: commit: index.html
+[33me766a82[m HEAD@{25}: commit: index.html
+[33mc398b03[m HEAD@{26}: commit: assets
+[33mba7813e[m HEAD@{27}: commit: index.html
+[33mb7714d5[m HEAD@{28}: commit: _config.yml
+[33mc9c1743[m HEAD@{29}: commit: _config.yml
+[33ma81950d[m HEAD@{30}: commit: assets
+[33m5517aaa[m HEAD@{31}: commit: _config.yml
+[33mb073e9e[m HEAD@{32}: commit: _config.yml
+[33mf3d4a35[m HEAD@{33}: commit: _config.yml
+[33m7828df1[m HEAD@{34}: commit: _config.yml
+[33m3dea60e[m HEAD@{35}: commit: _config.yml
+[33m01f5f70[m HEAD@{36}: commit: _config.yml
+[33m0d72d54[m HEAD@{37}: commit: _config.yml
+[33m19fe6bd[m HEAD@{38}: clone: from github.com:CoderTooolMan/CoderTooolMan.github.io
