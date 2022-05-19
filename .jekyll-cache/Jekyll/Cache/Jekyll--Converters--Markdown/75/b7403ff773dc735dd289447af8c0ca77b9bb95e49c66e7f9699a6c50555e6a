@@ -1,4 +1,4 @@
-I"�"<h2 id="1381最大的团队表现值">1381.最大的团队表现值</h2>
+I"%<h2 id="1381最大的团队表现值">1381.最大的团队表现值</h2>
 
 <p>公司有编号为 1 到 n 的 n 个工程师，给你两个数组 speed 和 efficiency ，其中 speed[i] 和 efficiency[i] 分别代表第 i 位工程师的速度和效率。请你返回由最多 k 个工程师组成的 最大团队表现值 ，由于答案可能很大，请你返回结果对 10^9 + 7 取余后的结果。</p>
 
@@ -47,36 +47,36 @@
 
 <h3 id="代码">代码：</h3>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
-<span class="nl">public:</span>
-    <span class="kt">int</span> <span class="n">maxPerformance</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">speed</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">efficiency</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">vector</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">worker</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
-        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-            <span class="n">worker</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">make_pair</span><span class="p">(</span><span class="n">efficiency</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">speed</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-        <span class="n">sort</span><span class="p">(</span><span class="n">worker</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">worker</span><span class="p">.</span><span class="n">end</span><span class="p">(),[](</span><span class="k">auto</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">){</span><span class="k">return</span> <span class="n">a</span><span class="p">.</span><span class="n">first</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">.</span><span class="n">first</span><span class="p">;});</span>
-        <span class="kt">long</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="n">priority_queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">,</span><span class="n">greater</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">p</span><span class="p">;</span>
-        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">p</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">worker</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">second</span><span class="p">);</span>
-            <span class="n">sum</span> <span class="o">+=</span> <span class="n">worker</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">second</span><span class="p">;</span>
-            <span class="n">res</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">worker</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">first</span><span class="o">*</span><span class="n">sum</span><span class="p">,</span><span class="n">res</span><span class="p">);</span>
-        <span class="p">}</span>
-        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">k</span><span class="p">;</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">worker</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">second</span> <span class="o">&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">top</span><span class="p">())</span>
-            <span class="p">{</span>
-                <span class="n">sum</span> <span class="o">-=</span> <span class="n">p</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
-                <span class="n">sum</span> <span class="o">+=</span> <span class="n">worker</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">second</span><span class="p">;</span>
-                <span class="n">p</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-                <span class="n">p</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">worker</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">second</span><span class="p">);</span>
-            <span class="p">}</span>
-            <span class="n">res</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">worker</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">first</span><span class="o">*</span><span class="n">sum</span><span class="p">,</span><span class="n">res</span><span class="p">);</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="n">res</span><span class="o">%</span><span class="p">(</span><span class="mi">1000000000</span><span class="o">+</span><span class="mi">7</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-</code></pre></div></div>
+<pre><code class="language-c++">class Solution {
+public:
+    int maxPerformance(int n, vector&lt;int&gt;&amp; speed, vector&lt;int&gt;&amp; efficiency, int k) {
+        vector&lt;pair&lt;int,int&gt;&gt; worker(n);
+        for(int i = 0; i &lt; n; i++)
+            worker[i] = make_pair(efficiency[i], speed[i]);
+        sort(worker.begin(), worker.end(),[](auto&amp; a, auto&amp; b){return a.first &gt; b.first;});
+        long sum = 0,res = 0;
+        priority_queue&lt;int,vector&lt;int&gt;,greater&lt;int&gt;&gt; p;
+        for(int i = 0; i &lt; k; i++)
+        {
+            p.push(worker[i].second);
+            sum += worker[i].second;
+            res = max(worker[i].first*sum,res);
+        }
+        for(int i = k;i &lt; n;i++)
+        {
+            if(worker[i].second &gt; p.top())
+            {
+                sum -= p.top();
+                sum += worker[i].second;
+                p.pop();
+                p.push(worker[i].second);
+            }
+            res = max(worker[i].first*sum,res);
+        }
+        return res%(1000000000+7);
+    }
+};
+</code></pre>
 
 <h3 id="收获">收获</h3>
 
