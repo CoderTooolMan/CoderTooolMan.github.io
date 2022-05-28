@@ -1,0 +1,2 @@
+instance,author_id,author_name,algo,time,device_cost,energy_cost,total_cost
+training-1.txt,201870122,ZYY,algo_demo,181.44400000000002
