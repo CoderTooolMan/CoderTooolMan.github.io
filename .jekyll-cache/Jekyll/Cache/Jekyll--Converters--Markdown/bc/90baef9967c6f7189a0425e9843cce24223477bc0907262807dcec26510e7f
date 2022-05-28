@@ -1,0 +1,60 @@
+I"r<h2 id="583-两个字符串的删除操作">583. 两个字符串的删除操作</h2>
+
+<p>给定两个单词 word1 和 word2 ，返回使得 word1 和  word2 相同所需的最小步数。</p>
+
+<p>每步 可以删除任意一个字符串中的一个字符。</p>
+
+<p>示例 1：</p>
+
+<p>输入: word1 = “sea”, word2 = “eat”</p>
+
+<p>输出: 2</p>
+
+<p>解释: 第一步将 “sea” 变为 “ea” ，第二步将 “eat “变为 “ea”</p>
+
+<p>示例  2:</p>
+
+<p>输入：word1 = “leetcode”, word2 = “etco”</p>
+
+<p>输出：4</p>
+
+<p>提示：</p>
+
+<p>1 &lt;= word1.length, word2.length &lt;= 500</p>
+
+<p>word1 和 word2 只包含小写英文字母</p>
+
+<h3 id="思路">思路</h3>
+
+<p>找到最长公共子串，最小步数 = 总长度 - 2*最长公共子串</p>
+
+<h3 id="代码">代码</h3>
+
+<pre><code class="language-c++">class Solution {
+public:
+    int minDistance(string word1, string word2) {
+        int count = 0;  
+        int result = 0;  
+        vector&lt;vector&lt;int&gt;&gt; l(word1.size() + 1, vector&lt;int&gt;(word2.size() + 1, 0));
+        for (int i = 1; i &lt;= word1.size(); i++) {
+            for (int j = 1; j &lt;= word2.size(); j++) {
+                if (word1[i-1] == word2[j-1]) {
+                    l[i][j] = l[i-1][j-1] + 1;
+                } 
+                else {
+                    l[i][j] = max(l[i-1][j], l[i][j-1]);
+                }
+            }
+        }
+        count = l[word1.size()][word2.size()];
+        result = word1.size() + word2.size() - 2 * count;
+        return result;
+
+    }
+};
+</code></pre>
+
+<h3 id="收获">收获</h3>
+
+<p>数据结构课上做过最长公共子串</p>
+:ET

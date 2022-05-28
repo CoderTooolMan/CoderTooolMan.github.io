@@ -1,0 +1,77 @@
+I"�<h2 id="968监控二叉树">968.监控二叉树</h2>
+
+<p>给定一个二叉树，我们在树的节点上安装摄像头。</p>
+
+<p>节点上的每个摄影头都可以监视其父对象、自身及其直接子对象。</p>
+
+<p>计算监控树的所有节点所需的最小摄像头数量。</p>
+
+<p>示例 1：<img src="\image\image-20220520225255926.png" alt="p1" /></p>
+
+<p>输入：[0,0,null,0,0]</p>
+
+<p>输出：1</p>
+
+<p>解释：如图所示，一台摄像头足以监控所有节点。</p>
+
+<p>示例 2：<img src="\image\image-20220520225311331.png" alt="p1" /></p>
+
+<p>输入：[0,0,null,0,null,0,null,null,0]</p>
+
+<p>输出：2</p>
+
+<p>解释：需要至少两个摄像头来监视树的所有节点。 上图显示了摄像头放置的有效位置之一。</p>
+
+<p>提示：</p>
+
+<p>给定树的节点数的范围是 [1, 1000]。</p>
+
+<p>每个节点的值都是 0。</p>
+
+<h3 id="思路">思路</h3>
+
+<p>后序遍历，每个节点向上传递信息。只有装了、没被监视、被监视三种状态。</p>
+
+<h3 id="代码">代码</h3>
+
+<pre><code class="language-c++">/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+int dfs(TreeNode* root,int &amp;res) {
+        if (root == NULL) return 1;
+        int s1 = dfs(root-&gt;left,res);
+        int s2 = dfs(root-&gt;right,res);
+        if (s1 == 3 || s2 == 3) {
+            res++;
+            return 2;
+        }
+        if (s1 == 2 || s2 == 2) {
+            return 1;
+        }
+        return 3;
+    }
+    int minCameraCover(TreeNode* root) {
+        int res = 0;
+        if (dfs(root,res) == 3) 
+            res++;
+        return res;
+    }
+    
+};
+</code></pre>
+
+<h3 id="收获">收获</h3>
+
+<p>后序遍历，还有一些贪心的思想</p>
+
+:ET

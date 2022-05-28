@@ -5,8 +5,9 @@ description: Daily Record
 header-img: assets/img/head.jpg
 ---
 
+<body>
 {% include header.html %}
-
+<!-- 背景 -->
 <div
     class="g-banner home-banner {{ site.theme-color | prepend: 'banner-theme-' }}"
     data-theme="{{ site.theme-color }}"
@@ -15,7 +16,7 @@ header-img: assets/img/head.jpg
     <h2>{{ page.home-title }}</h2>
     <h3>{{ page.description }}</h3>
 </div>
-
+<!-- 文章-->
 <main class="g-container home-content">
     <div class="article-list">
         {% for post in paginator.posts %}
@@ -54,7 +55,7 @@ header-img: assets/img/head.jpg
         {% endif %}
 
     </div>
-
+<!-- 侧边栏 -->
     <aside class="g-sidebar-wrapper">
         <div class="g-sidebar">
             <section class="author-card">
@@ -102,7 +103,7 @@ header-img: assets/img/head.jpg
       <br />
      <a href="https://info.flagcounter.com/2zGX"><img src="https://s05.flagcounter.com/count2/2zGX/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_12/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
     </aside>
-
 </main>
 
+</body>
 {% include footer.html %}
